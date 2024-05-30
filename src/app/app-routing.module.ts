@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { GuardiaGuard } from './access.guard';
-import { GuardGuard } from './guard/guard.guard';
-
 const routes: Routes = [
 
  
@@ -50,10 +47,6 @@ const routes: Routes = [
   {
     path: 'suscribete',
     loadChildren: () => import('./suscribete/suscribete.module').then( m => m.SuscribetePageModule)
-  },
-  {
-    path: '**',
-    loadChildren: () => import('./not-found/not-found.module').then( m => m.NotFoundPageModule)
   }
 
   

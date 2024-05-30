@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Storage } from '@ionic/storage-angular';
-import { IonicStorageModule } from '@ionic/storage-angular';
 
 
 @Injectable({
   providedIn: 'root',
 })
 export class AlumnosService {
-  private apiUrl = 'https://1z3gscj2-8000.brs.devtunnels.ms/api';
-
+  
+  private apiUrl = 'https://1z3gscj2-8000.brs.devtunnels.ms/api'; //Base de datos
+  
   constructor(private http: HttpClient) {
     this.init();
   }
@@ -18,6 +17,8 @@ export class AlumnosService {
   async init() {
     //await this.storage.create();
   }
+
+
 
   getAlumnos(): Observable<any[]> {
     return new Observable((observer) => {
