@@ -16,7 +16,7 @@ export class FijacionesPage implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private autenticacion: autenticacion
+    private autenticacion: autenticacion,
   ) { }
 
   ngOnInit() {
