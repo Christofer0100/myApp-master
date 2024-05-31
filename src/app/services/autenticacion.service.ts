@@ -35,6 +35,22 @@ export class autenticacion {
 
 
 
+
+  getCliente(): Observable<any[]> {
+    return new Observable((observer) => {
+      this.http.get<any[]>(`${this.baseUrl}/cliente/`).subscribe(
+        (apiData) => {
+          observer.next(apiData);
+          observer.complete();
+        },
+        (error) => {
+          console.error('Error en la solicitud HTTP:', error);
+          observer.error(error);
+        }
+      );
+    });
+  }
+
 }
   
 

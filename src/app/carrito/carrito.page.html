@@ -25,5 +25,14 @@
 
   <ion-item>
     <ion-label>Total: {{ total }}</ion-label>
+    <ion-button type="button" expand="full" color="medium" (click)="Crear_transaccion()">pagar</ion-button>
   </ion-item>
 </ion-content>
+
+<ion-list style="text-align:center">
+
+      
+    <ion-button type="button" expand="" color="success" [routerLink]="['/iniciar']">Iniciar Sesion</ion-button>
+    <ion-button type="button" expand="" color="secondary" [routerLink]="['/registro']">Crear Cuenta</ion-button>
+
+</ion-list>
