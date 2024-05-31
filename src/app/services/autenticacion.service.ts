@@ -7,7 +7,9 @@ import { IonicStorageModule } from '@ionic/storage-angular';
 @Injectable({
   providedIn: 'root',
 })
+
 export class autenticacion {
+  
   private baseUrl = 'http://127.0.0.1:8000';
 
   constructor(private http: HttpClient) {
@@ -17,6 +19,13 @@ export class autenticacion {
   async init() {
     //await this.storage.create();
   }
+
+
+
+
+
+
+
   getProductos(): Observable<any> {
     return this.http.get(`${this.baseUrl}/producto`);
   }
@@ -29,5 +38,6 @@ export class autenticacion {
     return this.http.post(`${this.baseUrl}/registrar_cliente/`, cliente);
   }
 
-  
 }
+  
+

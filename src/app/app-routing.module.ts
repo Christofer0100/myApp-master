@@ -43,9 +43,15 @@ const routes: Routes = [
   {
     path: 'suscribete',
     loadChildren: () => import('./suscribete/suscribete.module').then( m => m.SuscribetePageModule)
-  },  {
+  },
+  {
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
+
+  },
+  {
+    path: 'compra',
+    loadChildren: () => import('./compra/compra.module').then( m => m.CompraPageModule)
   }
 
 
