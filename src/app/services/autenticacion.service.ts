@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import { Storage } from '@ionic/storage-angular';
+import { IonicStorageModule } from '@ionic/storage-angular';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AlumnosService {
+
+export class autenticacion {
   
-  private apiUrl = 'http://127.0.0.1:8000/'; //Base de datos
-  
+  private baseUrl = 'http://127.0.0.1:8000';
+
   constructor(private http: HttpClient) {
     this.init();
   }
@@ -21,7 +23,18 @@ export class AlumnosService {
 
 
 
-}
 
+
+
+  getProductos(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/producto`);
+  }
+
+  getProductosPorTipo(tipoProducto: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/productos_por_tipo/?tipo_producto=${tipoProducto}`);
+  }
+  
+
+}
   
 

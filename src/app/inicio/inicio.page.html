@@ -1,9 +1,3 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Bienvenidos a Ferremax</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 
 
 <ion-content>
@@ -18,18 +12,18 @@
         <ion-card-title>Tipos de Productos</ion-card-title>
       </ion-card-header>
 
-      <ion-button type="button" expand="full" color="medium" [routerLink]="['/manuales']">Herramientas Manuales</ion-button>
+      <ion-button (click)="mostrarProductosPorTipo('materiales')">Materiales</ion-button>
       <br>
-      <ion-button type="button" expand="full" color="medium" [routerLink]="['/seguridad']">Equipos Seguridad</ion-button>      
+      <ion-button (click)="mostrarProductosPorTipo2('manuales')">Manuales</ion-button>
       <br>
-      <ion-button type="button" expand="full" color="medium" [routerLink]="['/fijaciones']">Fijaciones</ion-button>  
+      <ion-button (click)="mostrarProductosPorTipo3('seguridad')">Seguridad</ion-button>
       <br>
-      <ion-button type="button" expand="full" color="medium" [routerLink]="['/materiales']">Materiales Basicos</ion-button>     
+      <ion-button (click)="mostrarProductosPorTipo4('medicion')">Medicion</ion-button>
       <br>
-      <ion-button type="button" expand="full" color="medium" [routerLink]="['/tornillos']">Tornillos Anclajes</ion-button>    
+      <ion-button (click)="mostrarProductosPorTipo5('fijaciones')">Fijacion</ion-button>
       <br>
-      <ion-button type="button" expand="full" color="medium" [routerLink]="['/medicion']">Equipos medicion</ion-button>
-
+      <ion-button (click)="mostrarProductosPorTipo6('tornillos')">Tornillos</ion-button>
+     
       
     </ion-card-content>
 
