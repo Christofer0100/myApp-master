@@ -36,7 +36,7 @@ export class FijacionesPage {
       const urlPago = response.data.urlCompleta;
       console.log(response.data.token)
       // Abrir la URL de pago en una nueva pestaña del navegador
-      //window.location.href = urlPago;
+      window.location.href = urlPago;
 
 
 
