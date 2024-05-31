@@ -25,6 +25,9 @@ export class autenticacion {
     return this.http.get(`${this.baseUrl}/productos_por_tipo/?tipo_producto=${tipoProducto}`);
   }
   
+  registrarCliente(cliente: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/registrar_cliente/`, cliente);
+  }
 
   
 }

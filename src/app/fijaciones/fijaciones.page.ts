@@ -31,5 +31,5 @@ export class FijacionesPage implements OnInit {
       this.productos = data;
     });
   }
-
+  
 }
