@@ -4,12 +4,11 @@ import { Observable } from 'rxjs';
 import { Storage } from '@ionic/storage-angular';
 import { IonicStorageModule } from '@ionic/storage-angular';
 
-
 @Injectable({
   providedIn: 'root',
 })
-export class AlumnosService {
-  private apiUrl = 'https://1z3gscj2-8000.brs.devtunnels.ms/api';
+export class autenticacion {
+  private baseUrl = 'http://127.0.0.1:8000';
 
   constructor(private http: HttpClient) {
     this.init();
@@ -18,35 +17,14 @@ export class AlumnosService {
   async init() {
     //await this.storage.create();
   }
+  getProductos(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/producto`);
+  }
 
-  getAlumnos(): Observable<any[]> {
-    return new Observable((observer) => {
-      this.http.get<any[]>(`${this.apiUrl}/alumnos/`).subscribe(
-        (apiData) => {
-          observer.next(apiData);
-          observer.complete();
-        },
-        (error) => {
-          console.error('Error en la solicitud HTTP:', error);
-          observer.error(error);
-        }
-      );
-    });
+  getProductosPorTipo(tipoProducto: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/productos_por_tipo/?tipo_producto=${tipoProducto}`);
   }
-  getProfesores(): Observable<any[]> {
-    return new Observable((observer) => {
-      this.http.get<any[]>(`${this.apiUrl}/profesores/`).subscribe(
-        (apiData) => {
-          observer.next(apiData);
-          observer.complete();
-        },
-        (error) => {
-          console.error('Error en la solicitud HTTP:', error);
-          observer.error(error);
-        }
-      );
-    });
-  }
+  
 
   
 }
