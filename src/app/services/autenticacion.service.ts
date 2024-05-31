@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class AlumnosService {
   
-  private apiUrl = 'https://1z3gscj2-8000.brs.devtunnels.ms/api'; //Base de datos
+  private apiUrl = 'http://127.0.0.1:8000/'; //Base de datos
   
   constructor(private http: HttpClient) {
     this.init();
@@ -20,34 +20,8 @@ export class AlumnosService {
 
 
 
-  getAlumnos(): Observable<any[]> {
-    return new Observable((observer) => {
-      this.http.get<any[]>(`${this.apiUrl}/alumnos/`).subscribe(
-        (apiData) => {
-          observer.next(apiData);
-          observer.complete();
-        },
-        (error) => {
-          console.error('Error en la solicitud HTTP:', error);
-          observer.error(error);
-        }
-      );
-    });
-  }
-  getProfesores(): Observable<any[]> {
-    return new Observable((observer) => {
-      this.http.get<any[]>(`${this.apiUrl}/profesores/`).subscribe(
-        (apiData) => {
-          observer.next(apiData);
-          observer.complete();
-        },
-        (error) => {
-          console.error('Error en la solicitud HTTP:', error);
-          observer.error(error);
-        }
-      );
-    });
-  }
+
+}
 
   
-}
+
