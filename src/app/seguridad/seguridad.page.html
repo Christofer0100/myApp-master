@@ -9,9 +9,13 @@
     <ion-item *ngFor="let producto of productos">
       <ion-label>
         <h2>{{ producto.NombreProducto }}</h2>
+        <p>{{ producto.idProducto }}</p>
         <p>{{ producto.Descripcion }}</p>
-        <p>{{producto.Precio }}</p>
+        <p>{{ producto.Precio }}</p>
+        <ion-button (click)="agregarAlCarrito(producto)">Seleccionar</ion-button>
       </ion-label>
     </ion-item>
   </ion-list>
+  <ion-button routerLink="/carrito">Ver Carrito</ion-button> <!-- Añade un botón para navegar al carrito -->
 </ion-content>
+

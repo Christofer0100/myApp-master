@@ -52,7 +52,11 @@ const routes: Routes = [
   {
     path: 'compra',
     loadChildren: () => import('./compra/compra.module').then( m => m.CompraPageModule)
+  },  {
+    path: 'carrito',
+    loadChildren: () => import('./carrito/carrito.module').then( m => m.CarritoPageModule)
   }
+
 
 
   

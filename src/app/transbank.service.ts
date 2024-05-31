@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 export class TransbankService {
 
-  private transbankUrl = 'https://localhost:44329/api/Transbank'; //transbank url
+  private transbankUrl = 'https://localhost:7214/api/Transbank'; //transbank url
 
   constructor(private http: HttpClient) { }
 
@@ -20,5 +20,5 @@ export class TransbankService {
   Confirmar_transaccion(data: any): Observable<any> {
     return this.http.post(`${this.transbankUrl}/Confirmar_Transaccion`, data);
   }
-
+                                   
 }

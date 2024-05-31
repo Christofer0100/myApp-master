@@ -21,11 +21,6 @@ export class autenticacion {
   }
 
 
-
-
-
-
-
   getProductos(): Observable<any> {
     return this.http.get(`${this.baseUrl}/producto`);
   }
@@ -37,6 +32,8 @@ export class autenticacion {
   registrarCliente(cliente: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/registrar_cliente/`, cliente);
   }
+
+
 
 }
   
